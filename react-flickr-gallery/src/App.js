@@ -1,0 +1,24 @@
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import './App.css';
+
+import Page from './components/Page.js';
+import PageNotFound from './components/PageNotFound.js'
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path='/' render={ () => <Page title='Home' /> } />
+        <Route path='/search/:term' render={ () => <Page title='Search' /> } />
+        <Route path='/cats' render={ () => <Page title='Cats' /> } />
+        <Route path='/dogs' render={ () => <Page title='Dogs' /> } />
+        <Route path='/falafels' render={ () => <Page title='Falafels' /> } />
+        <Route component={PageNotFound} />
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+export default App;
