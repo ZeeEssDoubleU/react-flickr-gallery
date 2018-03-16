@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Search field component at the top of the app page.
 const SearchForm = props => {
   return (
     <form
       className="search-form"
-      onSubmit={props.handleSubmit}
+      onSubmit={props.handleSubmit}  // triggers handleSubmit function in Page.js
     >
-      <input
-        onChange={props.onSearchChange}
+      <input  //
+        onChange={props.onSearchChange} // triggers onSearchchange function in Page.js
         type="search"
         name="search"
         placeholder="Search"

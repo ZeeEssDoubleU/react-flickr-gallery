@@ -8,6 +8,7 @@ import SearchForm from './SearchForm.js';
 import MainNav from './MainNav.js';
 import PhotoContainer from './PhotoContainer.js';
 
+// Page class stores all app state, functions and houses all app sub components.
 class Page extends React.Component {
 
   constructor() {
@@ -20,7 +21,7 @@ class Page extends React.Component {
     }
   }
 
-  // Load default search results as soon as page renders
+  // Lifecycle function that fetches and loads image results as soon as page renders.  This triggers when the page first loads and when refreshing the page through the browser.
   componentDidMount() {
     if (this.props.title === 'Home') {
       this.performSearch('grumpy cat', apiKey);
@@ -31,6 +32,7 @@ class Page extends React.Component {
     }
   }
 
+  // Lifecycle function that fetches and loads image results whenever the page renders due to a url change.  This function also sets the loading state to true, which shows a loading indicator on the screen while images are being fetched.
   componentWillReceiveProps(nextProps) {
     this.setState({ loading: true });
 
@@ -41,16 +43,14 @@ class Page extends React.Component {
     } else {
       this.performSearch(nextProps.title, apiKey);
     }
-
-    console.log('currentProps: ', this.props.title, '     nextProps: ', nextProps.title);
   }
 
-  // Function returns photos based on search parameters.  Takes unique apiKay and returns 16 results.
+  // Function fetches and loads photos based on search parameters.  Takes unique apiKay and returns 32 results.
   performSearch = (query, apiKey) => {
     axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${query}&per_page=32&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({
-          photos: response.data.photos.photo,
+          photos: response.data.photos.photo,  // Result data fetched from the Flickr API
           loading: false,
           submittedSearchText: query,
         });
@@ -65,7 +65,7 @@ class Page extends React.Component {
     this.setState({ searchText: event.target.value });
   }
 
-  // Function that handles the search field submit event.  Triggers the performSearch function and resets the search field's text.
+  // Function that handles the search field submit event.  Triggers the performSearch function and resets the search field's text.  Also pushes any searches into the browser history.
   handleSubmit = event => {
     event.preventDefault();
     let path = `/search/${this.state.searchText}`;

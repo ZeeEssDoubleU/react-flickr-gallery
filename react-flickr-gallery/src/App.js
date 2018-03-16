@@ -6,6 +6,8 @@ import './App.css';
 import Page from './components/Page.js';
 import PageNotFound from './components/PageNotFound.js'
 
+
+// App fetches data and displays photos from the Flickr API.  Data fetched is defined by input from a search field, url parameters or from clicking predefined navigation buttons.
 const App = () => {
   return (
     <BrowserRouter>

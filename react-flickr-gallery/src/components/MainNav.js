@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+// Navigation component below the search componenet on the app page.  Displays 3 NavLink buttons.
 const MainNav = props => {
   return (
     <nav className="main-nav">

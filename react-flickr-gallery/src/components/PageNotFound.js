@@ -1,5 +1,6 @@
 import React from 'react';
 
+// 404 error page.  Renders when browser url does not match any of the app route paths.
 const PageNotFound = props => {
   return (
     <div className="not-found">

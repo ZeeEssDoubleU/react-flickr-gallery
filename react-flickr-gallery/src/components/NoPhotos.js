@@ -1,5 +1,6 @@
 import React from 'react';
 
+// NoPhoto component displays if no results are returned from search parameters.
 const NoPhoto = props => {
   return (
     <li className="not-found">
