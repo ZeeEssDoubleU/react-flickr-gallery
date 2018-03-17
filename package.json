@@ -19,5 +19,4 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "http://ZeeEssDoubleU.github.io/Treehouse-Project-11-React-Flickr-Gallery",
 }
