@@ -5,7 +5,7 @@
   "homepage": "https://zeeessdoubleu.github.io/Treehouse-Project-11-React-Flickr-Gallery",
   "dependencies": {
     "axios": "^0.17.1",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "npm": "^5.6.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
