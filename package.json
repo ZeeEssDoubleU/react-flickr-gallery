@@ -2,7 +2,7 @@
 	"name": "react-flickr-gallery",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://zeeessdoubleu.github.io/Treehouse-Project-11-React-Flickr-Gallery",
+	"homepage": "https://react-flickr-gallery.netlify.com",
 	"dependencies": {
 		"axios": "^0.19.0",
 		"bootstrap": "^3.4.1",
