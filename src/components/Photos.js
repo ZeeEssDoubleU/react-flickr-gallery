@@ -37,10 +37,6 @@ export default function Photos(props) {
 // styles
 // *************
 
-const Header = styled.h1`
-	text-align: center;
-	text-transform: capitalize;
-`;
 const List = styled.ul`
 	display: flex;
 	flex-wrap: wrap;
